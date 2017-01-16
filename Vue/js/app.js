@@ -803,13 +803,42 @@ var app = new Vue({
       "ip_address": "37.237.9.92",
       "avatar": "https://robohash.org/officiatotamet.png?size=318x180&set=set1"
     }],
-    searchQuery: ''
+    searchQuery: '',
+    maxResults: 10,
+    chunk: [],
+    counter: 0,
+    numbers: []
   },
-  mounted: function() {
-
+  created: function() {
+    this.chunk = _.chunk(this.mockUsers, this.maxResults);
+    this.mockUsers = this.chunk[this.counter];
+    for (var i = 0; i < this.mockUsers.length; i++) {
+      this.numbers[i] = i;
+    }
   },
   methods: {
-
+    next: function() {
+      this.counter++;
+      if (this.counter >= this.mockUsers.length) {
+        this.counter = 0;
+        this.mockUsers = this.chunk[this.counter];
+      } else {
+        this.mockUsers = this.chunk[this.counter];
+      }
+    },
+    prev: function() {
+      this.counter--;
+      if (this.counter < 0) {
+        this.counter = this.mockUsers.length - 1;
+        this.mockUsers = this.chunk[this.counter];
+      } else {
+        this.mockUsers = this.chunk[this.counter];
+      }
+    },
+    page: function(num) {
+      this.counter = num;
+      this.mockUsers = this.chunk[num];
+    }
   },
   computed: {
     cUsers: function() {

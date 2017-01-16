@@ -1,60 +1,70 @@
 .cst-card {
-	margin-bottom: 1em;
-	width: auto;
-	box-shadow: 10px 10px 5px #888888;
+  margin-bottom: 1em;
+  width: auto;
+  box-shadow: 10px 10px 5px #888888;
 }
 
-.card-container{
-	margin-top: 5em;
+.pager {
+  padding-top: 6em;
+  padding-bottom: 2em;
+}
+
+.card-container {
+  margin-bottom: 4em;
 }
 
 input {
-	outline: none;
+  outline: none;
 }
+
 input[type=search] {
-	-webkit-appearance: textfield;
-	-webkit-box-sizing: content-box;
-	font-family: inherit;
-	font-size: 100%;
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
 }
+
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
-	display: none; 
+  display: none;
 }
-
 
 input[type=search] {
-	background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-	border: solid 1px #ccc;
-	padding: 9px 10px 9px 32px;
-	width: 55px;
-	
-	-webkit-border-radius: 10em;
-	-moz-border-radius: 10em;
-	border-radius: 10em;
-	
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
-}
-input[type=search]:focus {
-	width: 300px;
-	background-color: #fff;
-	border-color: #66CC75;
-	
-	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	box-shadow: 0 0 5px rgba(109,207,246,.5);
+  background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  width: 55px;
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
 }
 
+input[type=search]:focus {
+  width: 300px;
+  background-color: #fff;
+  border-color: #66CC75;
+  -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+  -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+  box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+}
 
 input:-moz-placeholder {
-	color: #999;
+  color: #999;
 }
+
 input::-webkit-input-placeholder {
-	color: #999;
+  color: #999;
 }
 
 #app > nav > a {
-	margin-left: 15rem;
+  margin-left: 15rem;
+}
+
+@media (max-width: 991px) {
+  #app > nav > a {
+    margin-left: 0;
+  }
 }

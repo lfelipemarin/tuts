@@ -34,6 +34,14 @@
       </div>
     </nav>
     <div class="container card-container">
+      <div class="row pager">
+        <div class="col-sm-12">
+          <a class="btn btn-primary" @click="prev()" style="cursor: pointer;">Previous</a>
+          <a class="btn btn-primary" v-for='number in numbers' @click='page(number)' v-bind:class="{'active': (number==counter)}" style="cursor: pointer;">{{number+1}}</a>
+          <a class="btn btn-primary" @click="next()" style="cursor: pointer;">Next</a>
+          <input v-model="maxResults" placeholder="edit me">
+        </div>
+      </div>
       <div class="row">
         <div class="col-sm-12 col-md-4" v-for='user in cUsers'>
           <div class="card cst-card">
@@ -46,12 +54,15 @@
                 <br> IP Address: {{user.ip_address}}
                 <br>
               </p>
-              <a href="#" class="btn btn-primary">View More</a>
+              <a class="btn btn-primary" v-on:click="next()">View More</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <nav class="navbar fixed-bottom navbar-light bg-primary">
+      <a class="navbar-brand" href="#">Fixed bottom</a>
+    </nav>
   </div>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
